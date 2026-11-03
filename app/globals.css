@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-size: 14px;
+  }
+  * {
+    @apply border-line;
+  }
+  input,
+  select,
+  textarea {
+    @apply text-[13px];
+  }
+}
+
+@layer components {
+  .input {
+    @apply h-9 w-full rounded-lg border border-line-2 bg-white px-3 text-ink placeholder:text-ink-4 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 disabled:bg-panel disabled:text-ink-3;
+  }
+  .label {
+    @apply mb-1.5 block text-[12px] font-medium text-ink-2;
+  }
+  .th {
+    @apply whitespace-nowrap border-b border-line px-3 py-2.5 text-left text-[12px] font-medium text-ink-3;
+  }
+  .td {
+    @apply whitespace-nowrap border-b border-line px-3 py-2.5 text-[13px] text-ink-2;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 6px;
+}

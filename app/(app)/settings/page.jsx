@@ -97,7 +97,7 @@ function Users() {
                 </td>
                 <td className="td">{fmtDateTime(u.lastLoginAt)}</td>
                 <td className="td">
-                  <Toggle checked={u.isActive} disabled={u._id === user._id} onChange={(v) => patch(u._id, { isActive: v })} />
+                  <Toggle checked={u.isActive} disabled={u._id === user._id} onChange={(v) => patch(u._id, { isActive: v })} ariaLabel={`Active: ${u.email}`} />
                 </td>
               </tr>
             ))}
@@ -188,7 +188,7 @@ export default function SettingsPage() {
             <Toggle checked={compliance.requireConsent} disabled={!isAdmin} onChange={(v) => saveCompliance({ ...compliance, requireConsent: v })} label="Only call contacts with recorded consent" />
             <ul className="list-disc space-y-1 pl-5 text-[12px] text-ink-3">
               <li>Campaign windows are restricted to 09:00–21:00 IST.</li>
-              <li>Keypad 0 (configurable) and the agent's opt_out tool permanently stop calls to a number.</li>
+              <li>Keypad 0 (configurable) and the agent&apos;s opt_out tool permanently stop calls to a number.</li>
               <li>Register your ExoPhone header and content templates on the DLT platform for promotional traffic.</li>
             </ul>
           </div>

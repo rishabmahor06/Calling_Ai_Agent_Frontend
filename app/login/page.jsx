@@ -4,6 +4,17 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { api } from '@/lib/api';
 import { Button, Field, Input, ErrorNote } from '@/components/ui';
 
+// Only same-origin paths: browsers resolve "/\evil.com" (and "//evil.com") to another host.
+function safeNext(next) {
+  if (!next) return '/dashboard';
+  try {
+    const url = new URL(next, window.location.origin);
+    return url.origin === window.location.origin ? `${url.pathname}${url.search}${url.hash}` : '/dashboard';
+  } catch {
+    return '/dashboard';
+  }
+}
+
 function LoginForm() {
   const router = useRouter();
   const params = useSearchParams();
@@ -18,8 +29,7 @@ function LoginForm() {
     setError(null);
     try {
       await api('/auth/login', { method: 'POST', body: { email, password } });
-      const next = params.get('next');
-      router.replace(next && next.startsWith('/') && !next.startsWith('//') ? next : '/dashboard');
+      router.replace(safeNext(params.get('next')));
     } catch (err) {
       setError(err);
       setLoading(false);

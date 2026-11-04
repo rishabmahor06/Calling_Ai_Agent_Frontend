@@ -22,6 +22,7 @@ export function useDateRange(initial = '7d') {
   const [preset, setPreset] = useState(initial);
   const [custom, setCustom] = useState({ from: '', to: '' });
   // Round "now" to the minute so the params object doesn't change every render.
+  // eslint-disable-next-line react-hooks/purity -- reading the clock here is intentional; the value is minute-stable
   const minute = Math.floor(Date.now() / 60000);
   const range = useMemo(() => {
     const r = rangeFor(preset, custom);

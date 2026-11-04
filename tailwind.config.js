@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: { sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
       colors: {
-        ink: { DEFAULT: '#18181b', 2: '#52525b', 3: '#71717a', 4: '#a1a1aa' },
+        ink: { DEFAULT: '#18181b', 2: '#52525b', 3: '#71717a', 4: '#737378' },
         line: { DEFAULT: '#ececef', 2: '#e4e4e7' },
         canvas: '#f4f4f5',
         panel: '#fafafa',

@@ -122,7 +122,7 @@ function TryQuestion() {
             ))}
           </ul>
         ) : (
-          <p className="text-[12px] text-ink-3">Nothing found — on a call the agent would say it doesn't know and offer a support executive.</p>
+          <p className="text-[12px] text-ink-3">Nothing found — on a call the agent would say it doesn&apos;t know and offer a support executive.</p>
         )}
       </div>
     </Card>
@@ -160,8 +160,8 @@ export default function KnowledgePage() {
       <div className="mb-4 flex gap-2 rounded-lg border border-line bg-panel px-3 py-2 text-[12px] text-ink-2">
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-ink-3" />
         <span>
-          The first ~16,000 characters go straight into the agent's instructions (fastest answers). For anything beyond that, the agent searches all content during the call. If the
-          answer isn't here, it says so and offers a support executive — it never makes things up.
+          The first ~16,000 characters go straight into the agent&apos;s instructions (fastest answers). For anything beyond that, the agent searches all content during the call. If the
+          answer isn&apos;t here, it says so and offers a support executive — it never makes things up.
         </span>
       </div>
       <ErrorNote error={error} />

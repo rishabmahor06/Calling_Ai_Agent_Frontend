@@ -173,7 +173,7 @@ export default function AgentSettingsPage() {
                     </option>
                   ))}
                 </Select>
-                <Toggle checked={o.enabled} onChange={(v) => setIvr(i, { enabled: v })} />
+                <Toggle checked={o.enabled} onChange={(v) => setIvr(i, { enabled: v })} ariaLabel={`Enable key ${o.digit}`} />
                 <button type="button" className="rounded p-1.5 text-ink-3 hover:bg-panel hover:text-red-600" onClick={() => set('ivrOptions', form.ivrOptions.filter((_, j) => j !== i))} aria-label="Remove option">
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>

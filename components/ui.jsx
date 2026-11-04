@@ -94,12 +94,13 @@ export const Select = ({ className, children, ...p }) => (
   </select>
 );
 
-export function Toggle({ checked, onChange, label, disabled }) {
+export function Toggle({ checked, onChange, label, disabled, ariaLabel }) {
   return (
     <button
       type="button"
       role="switch"
       aria-checked={checked}
+      aria-label={label ? undefined : ariaLabel}
       disabled={disabled}
       onClick={() => onChange(!checked)}
       className="inline-flex items-center gap-2 text-[13px] text-ink-2 disabled:opacity-50"
